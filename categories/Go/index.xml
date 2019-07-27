@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Leighj</title>
+    <link>https://leighj.github.io/categories/Go/</link>
+    <description>Recent content in Go on Leighj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 25 Jul 2019 11:11:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://leighj.github.io/categories/Go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Note</title>
+      <link>https://leighj.github.io/2019/07/25/go-note.html</link>
+      <pubDate>Thu, 25 Jul 2019 11:11:24 +0800</pubDate>
+      
+      <guid>https://leighj.github.io/2019/07/25/go-note.html</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;golang笔记，基础知识，查漏补缺&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

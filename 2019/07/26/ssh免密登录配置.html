@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SSH免秘登录配置 - Leighj</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="leighj" /><meta name="description" content="ssh，免密登录" /><meta name="keywords" content="ssh, 免密登录, github, gitlab" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo" />
+
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="SSH免秘登录配置" />
+<meta property="og:description" content="ssh，免密登录" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leighj.github.io/2019/07/26/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95%E9%85%8D%E7%BD%AE.html" />
+<meta property="article:published_time" content="2019-07-26T18:05:16&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-26T18:05:16&#43;08:00"/>
+
+<meta itemprop="name" content="SSH免秘登录配置">
+<meta itemprop="description" content="ssh，免密登录">
+
+
+<meta itemprop="datePublished" content="2019-07-26T18:05:16&#43;08:00" />
+<meta itemprop="dateModified" content="2019-07-26T18:05:16&#43;08:00" />
+<meta itemprop="wordCount" content="911">
+
+
+
+<meta itemprop="keywords" content="SSH," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SSH免秘登录配置"/>
+<meta name="twitter:description" content="ssh，免密登录"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Leighj</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Leighj</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">SSH免秘登录配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-26 </span>
+        <div class="post-category">
+            <a href="/categories/Dev/"> Dev </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#git-客户端配置-不需要输入密码和多仓库配置">git 客户端配置（不需要输入密码和多仓库配置）</a>
+<ul>
+<li><a href="#1-生成密钥">1.生成密钥</a></li>
+<li><a href="#2-设置版本仓库帐号的密钥">2.设置版本仓库帐号的密钥</a>
+<ul>
+<li><a href="#输出公钥内容">输出公钥内容：</a></li>
+</ul></li>
+<li><a href="#3-测试">3.测试</a></li>
+</ul></li>
+<li><a href="#多版本仓库的配置">多版本仓库的配置</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>Github/Gitlab SSH免密登录配置，多版本仓库配置</p>
+</blockquote>
+
+<h1 id="git-客户端配置-不需要输入密码和多仓库配置">git 客户端配置（不需要输入密码和多仓库配置）</h1>
+
+<p>本操作在linux下进行，<strong>一定要用git协议，不要用http协议来访问仓库。</strong></p>
+
+<h2 id="1-生成密钥">1.生成密钥</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ ssh-keygen -t rsa -C &#34;要生成的密钥的说明&#34;
+Enter file in which to save the key (/root/.ssh/id_rsa): [输入密钥保存的位置]（这里直接回车，默认保存到当前帐号的home目录的.ssh目录中。如果不用默认的需要设置.ssh/config才能访问git）
+Enter passphrase (empty for no passphrase): [回车]（如果输入了密码，使用git时就要密码了，所以直接回车）
+Enter same passphrase again: [回车]
+Your identification has been saved in id_rsa.
+Your public key has been saved in id_rsa.pub.
+The key fingerprint is:
+41:d6:e3:65:2e:68:a0:13:ee:bb:b4:dc:06:1a:74:c1 xxxx....
+The key&#39;s randomart image is:
++--[ RSA 2048]----+
+|   .    o.       |
+|    E .o  o o    |
+|   . + ..o =     |
+|  . =   o.o .    |
+| . o . .S  .     |
+|  . o            |
+|   o.o           |
+|  .o.o.          |
+|    +o.          |
++-----------------+</pre></td></tr></table>
+</div>
+</div>
+<h2 id="2-设置版本仓库帐号的密钥">2.设置版本仓库帐号的密钥</h2>
+
+<h3 id="输出公钥内容">输出公钥内容：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ cat ~/.ssh/id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmKEdUk7dLeHC0ngZUk8bhtQbsmLYa............</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">1. 登录 http://gitlab.leighj.com
+2. 进入页面 Profile Settings -&gt; SSH Keys 将上边输出的公钥内容复制到页面上的 Key 文本框中，保存。</pre></td></tr></table>
+</div>
+</div>
+<h2 id="3-测试">3.测试</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ ssh -T git@gitlab.leighj.com
+Welcome to GitLab, leighj!</pre></td></tr></table>
+</div>
+</div>
+<p>成功。</p>
+
+<hr />
+
+<p>如果输出是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0777 for &#39;/root/.ssh/id_rsa&#39; are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+bad permissions: ignore key: /root/.ssh/id_rsa
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password,keyboard-interactive).</pre></td></tr></table>
+</div>
+</div>
+<p><strong>则需要将文件: /root/.ssh/id_rsa 的权限设置为 0666</strong></p>
+
+<hr />
+
+<p>以上完毕后，可以不用输入密码使用git了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git clone git@gitlab.leighj.com:ERP/aggra.git</pre></td></tr></table>
+</div>
+</div>
+<hr />
+
+<h1 id="多版本仓库的配置">多版本仓库的配置</h1>
+
+<p>每个仓库需要生成一个密钥，ssh具体要访问哪个仓库，需要给ssh增加一个config配置文件用于指明。</p>
+
+<p>1.生成密钥，要指定名字，否则会将原有默认文件覆盖掉。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ ssh-keygen -t rsa -C &#34;要生成的密钥的说明&#34;
+Enter file in which to save the key (/root/.ssh/id_rsa):/root/.ssh/aggra (这里指明生成的密钥的文件名)
+接下来的密码输入直接回车，过掉。之后会生成两个文件：
+aggra
+aggra.pub</pre></td></tr></table>
+</div>
+</div>
+<p>2.配置ssh</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ cd ~/.ssh/
+$ vi config (这个文件不存在，需要自己添加)</pre></td></tr></table>
+</div>
+</div>
+<p>config文件内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Host git-aggra (ssh要用到的主机名)
+    Port 22 （端口号）
+    User xxx （git用户名）
+    HostName gitlab.leighj.com (git的真实主机地址)
+    PreferredAuthentications publickey （验证方式）
+    IdentityFile ~/.ssh/aggra （私钥文件）</pre></td></tr></table>
+</div>
+</div>
+<p><strong>注意一点，设置了Host之后。只能用Host设置的值进行访问了。</strong></p>
+
+<p>没有设置config的情况可以这样访问：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git clone git@gitlab.leighj.com:ERP/aggra.git</pre></td></tr></table>
+</div>
+</div>
+<p>设置config后就必须这样访问：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git clone git@git-aggra:ERP/aggra.git</pre></td></tr></table>
+</div>
+</div>
+<p>将本地公钥重定向追加到远程文件authorized_keys的末尾</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ssh user@host &#39;mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys&#39; &lt; ~/.ssh/id_rsa.pub</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">leighj</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-07-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/SSH/">SSH</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/2019/07/25/go-note.html">
+            <span class="next-text nav-default">Go Note</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'leighj';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://github.com/leighjpeter" class="iconfont icon-github" title="github"></a>
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">leighj</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

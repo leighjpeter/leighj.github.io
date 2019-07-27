@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leighj</title>
+    <link>https://leighj.github.io/</link>
+    <description>Recent content on Leighj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 26 Jul 2019 18:05:16 +0800</lastBuildDate>
+    
+	<atom:link href="https://leighj.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SSH免秘登录配置</title>
+      <link>https://leighj.github.io/2019/07/26/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95%E9%85%8D%E7%BD%AE.html</link>
+      <pubDate>Fri, 26 Jul 2019 18:05:16 +0800</pubDate>
+      
+      <guid>https://leighj.github.io/2019/07/26/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95%E9%85%8D%E7%BD%AE.html</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Github/Gitlab SSH免密登录配置，多版本仓库配置&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go Note</title>
+      <link>https://leighj.github.io/2019/07/25/go-note.html</link>
+      <pubDate>Thu, 25 Jul 2019 11:11:24 +0800</pubDate>
+      
+      <guid>https://leighj.github.io/2019/07/25/go-note.html</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;golang笔记，基础知识，查漏补缺&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
