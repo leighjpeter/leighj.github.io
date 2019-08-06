@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Leighj</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 26 Jul 2019 18:05:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 06 Aug 2019 15:45:29 +0800</lastBuildDate>
     
 	<atom:link href="https://leighj.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go</title>
+      <link>https://leighj.github.io/categories/Go/</link>
+      <pubDate>Tue, 06 Aug 2019 15:45:29 +0800</pubDate>
+      
+      <guid>https://leighj.github.io/categories/Go/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Dev</title>
@@ -17,15 +26,6 @@
       <pubDate>Fri, 26 Jul 2019 18:05:16 +0800</pubDate>
       
       <guid>https://leighj.github.io/categories/Dev/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://leighj.github.io/categories/Go/</link>
-      <pubDate>Thu, 25 Jul 2019 11:11:24 +0800</pubDate>
-      
-      <guid>https://leighj.github.io/categories/Go/</guid>
       <description></description>
     </item>
     
