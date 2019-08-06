@@ -45,15 +45,15 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://leighj.github.io/2019/07/25/go-note.html" />
 <meta property="article:published_time" content="2019-07-25T11:11:24&#43;08:00"/>
-<meta property="article:modified_time" content="2019-07-25T11:11:24&#43;08:00"/>
+<meta property="article:modified_time" content="2019-08-01T11:11:24&#43;08:00"/>
 
 <meta itemprop="name" content="Go Note">
 <meta itemprop="description" content="golang学习笔记，基础知识，查漏补缺">
 
 
 <meta itemprop="datePublished" content="2019-07-25T11:11:24&#43;08:00" />
-<meta itemprop="dateModified" content="2019-07-25T11:11:24&#43;08:00" />
-<meta itemprop="wordCount" content="8401">
+<meta itemprop="dateModified" content="2019-08-01T11:11:24&#43;08:00" />
+<meta itemprop="wordCount" content="8530">
 
 
 
@@ -134,6 +134,8 @@
         <div class="post-category">
             <a href="/categories/Go/"> Go </a>
             </div>
+          <span class="more-meta"> 约 8530 字 </span>
+          <span class="more-meta"> 预计阅读 18 分钟 </span>
         
       </div>
     </header>
@@ -412,6 +414,8 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//  内部预定义字段
@@ -424,7 +428,9 @@
 
 <span class="nx">内建函数</span><span class="p">:</span> <span class="nx">make</span> <span class="nx">len</span> <span class="nx">cap</span> <span class="nx">new</span> <span class="nx">append</span> <span class="nx">copy</span> <span class="nx">close</span> <span class="nx">delete</span>
         <span class="nx">complex</span> <span class="nx">real</span> <span class="nx">imag</span>
-        <span class="nx">panic</span> <span class="nx">recover</span></code></pre></td></tr></table>
+        <span class="nx">panic</span> <span class="nx">recover</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="控制语句"><strong>控制语句</strong></h3>
@@ -492,6 +498,8 @@
 </span><span class="lnt">60
 </span><span class="lnt">61
 </span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// for 三种形式
@@ -555,7 +563,9 @@
         <span class="p">}</span>
         <span class="k">goto</span> <span class="nx">LABEL1</span>
     <span class="p">}</span>
-<span class="nx">LABEL1</span><span class="p">:</span></code></pre></td></tr></table>
+<span class="nx">LABEL1</span><span class="p">:</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="数组-值类型"><strong>数组(值类型)</strong></h3>
@@ -570,13 +580,17 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">numArr01</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="kt">int</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
 <span class="kd">var</span> <span class="nx">numArr02</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
 <span class="kd">var</span> <span class="nx">numArr03</span> <span class="p">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
 <span class="kd">var</span> <span class="nx">numArr04</span> <span class="p">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">800</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">900</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">999</span><span class="p">}</span>
-<span class="nx">strArr05</span> <span class="o">:=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">}</span></code></pre></td></tr></table>
+<span class="nx">strArr05</span> <span class="o">:=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;a&#34;</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">,</span><span class="s">&#34;c&#34;</span><span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -599,6 +613,8 @@
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">arr</span> <span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="kt">int</span>
@@ -615,7 +631,9 @@
 <span class="p">)</span>
 
 <span class="kd">type</span> <span class="nx">pixel</span> <span class="kt">int</span>
-<span class="kd">var</span> <span class="nx">screen</span> <span class="p">[</span><span class="nx">WIDTH</span><span class="p">][</span><span class="nx">HEIGHT</span><span class="p">]</span><span class="nx">pixel</span></code></pre></td></tr></table>
+<span class="kd">var</span> <span class="nx">screen</span> <span class="p">[</span><span class="nx">WIDTH</span><span class="p">][</span><span class="nx">HEIGHT</span><span class="p">]</span><span class="nx">pixel</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -635,6 +653,8 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">arr1</span> <span class="p">=</span> <span class="nb">new</span><span class="p">([</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
@@ -648,7 +668,9 @@
 
 <span class="err">#</span> <span class="nx">指针数组</span>
 <span class="nx">x</span><span class="p">,</span><span class="nx">y</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span>
-<span class="nx">a</span> <span class="o">:=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">*</span><span class="kt">int</span><span class="p">{</span><span class="o">&amp;</span><span class="nx">x</span><span class="p">,</span><span class="o">&amp;</span><span class="nx">y</span><span class="p">}</span></code></pre></td></tr></table>
+<span class="nx">a</span> <span class="o">:=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="o">*</span><span class="kt">int</span><span class="p">{</span><span class="o">&amp;</span><span class="nx">x</span><span class="p">,</span><span class="o">&amp;</span><span class="nx">y</span><span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="切片-slice-引用类型"><strong>切片 Slice(引用类型)</strong></h3>
@@ -660,14 +682,18 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="c1">// 本质是一个数据结构(struct结构体)
-</span><span class="c1"></span>  <span class="kd">type</span> <span class="nx">slice</span> <span class="kd">struct</span><span class="p">{</span>
-      <span class="nx">ptr</span> <span class="o">*</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="kt">int</span>
-      <span class="nx">len</span> <span class="kt">int</span>
-      <span class="nx">cap</span> <span class="kt">int</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 本质是一个数据结构(struct结构体)
+</span><span class="c1"></span><span class="kd">type</span> <span class="nx">slice</span> <span class="kd">struct</span><span class="p">{</span>
+    <span class="nx">ptr</span> <span class="o">*</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="kt">int</span>
+    <span class="nx">len</span> <span class="kt">int</span>
+    <span class="nx">cap</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -697,34 +723,38 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="c1">// 方式1
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">intArr</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span> <span class="p">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">}</span>
-  <span class="nx">slice</span> <span class="o">:=</span> <span class="nx">intArr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1">//左闭右开 slice = [2,3]
-</span><span class="c1"></span>  <span class="c1">// 方式2
-</span><span class="c1"></span>  <span class="nx">slice_a</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kd">type</span><span class="p">,</span><span class="nx">len</span><span class="p">,[</span><span class="nx">cap</span><span class="p">])</span>
-  <span class="c1">// 方式3
-</span><span class="c1"></span>  <span class="nx">slice_b</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
-  <span class="kd">var</span> <span class="nx">slice_c</span> <span class="p">[]</span><span class="kt">string</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;tom&#34;</span><span class="p">,</span><span class="s">&#34;leighj&#34;</span><span class="p">}</span>
-  <span class="c1">//
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">slice</span> <span class="p">[]</span><span class="kt">int</span> <span class="c1">//创建一个空的slice，cap和len都是0
-</span><span class="c1"></span>  <span class="nx">slice</span> <span class="o">==</span> <span class="kc">nil</span> <span class="c1">//true
-</span><span class="c1"></span>  <span class="nx">slice</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
-  <span class="nx">slice</span> <span class="o">==</span> <span class="kc">nil</span> <span class="c1">// false
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 方式1
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">intArr</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span> <span class="p">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">}</span>
+<span class="nx">slice</span> <span class="o">:=</span> <span class="nx">intArr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1">//左闭右开 slice = [2,3]
+</span><span class="c1">// 方式2
+</span><span class="c1"></span><span class="nx">slice_a</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kd">type</span><span class="p">,</span><span class="nx">len</span><span class="p">,[</span><span class="nx">cap</span><span class="p">])</span>
+<span class="c1">// 方式3
+</span><span class="c1"></span><span class="nx">slice_b</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="kd">var</span> <span class="nx">slice_c</span> <span class="p">[]</span><span class="kt">string</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;tom&#34;</span><span class="p">,</span><span class="s">&#34;leighj&#34;</span><span class="p">}</span>
+<span class="c1">//
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">slice</span> <span class="p">[]</span><span class="kt">int</span> <span class="c1">//创建一个空的slice，cap和len都是0
+</span><span class="c1"></span><span class="nx">slice</span> <span class="o">==</span> <span class="kc">nil</span> <span class="c1">//true
+</span><span class="c1"></span><span class="nx">slice</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>
+<span class="nx">slice</span> <span class="o">==</span> <span class="kc">nil</span> <span class="c1">// false
 </span><span class="c1"></span>
 
-  <span class="c1">//slice 之间无法比较 不能使用==
+<span class="c1">//slice 之间无法比较 不能使用==
 </span><span class="c1"></span>
-  <span class="c1">//组成多维数据结构，内部的slice长度可以不一致，这一点和数组不同
-</span><span class="c1"></span>  <span class="nx">twoD</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-  <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-      <span class="nx">innerLen</span> <span class="o">:=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span>
-      <span class="nx">twoD</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">innerLen</span><span class="p">)</span>
-      <span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="nx">innerLen</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
-          <span class="nx">twoD</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="nx">j</span>
-      <span class="p">}</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<span class="c1">//组成多维数据结构，内部的slice长度可以不一致，这一点和数组不同
+</span><span class="c1"></span><span class="nx">twoD</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="nx">innerLen</span> <span class="o">:=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nx">twoD</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">innerLen</span><span class="p">)</span>
+    <span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="nx">innerLen</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">twoD</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="nx">j</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -738,12 +768,16 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//append底层原理：先创建数组阔容，将原来的元素拷贝到新数组，追加新的元素，然后slice重新引用到这个数组
 </span><span class="c1"></span><span class="kd">var</span> <span class="nx">slice</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
 <span class="nx">slice</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-<span class="nx">slice</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span><span class="nx">slice</span><span class="o">...</span><span class="p">)</span></code></pre></td></tr></table>
+<span class="nx">slice</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">slice</span><span class="p">,</span><span class="nx">slice</span><span class="o">...</span><span class="p">)</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -766,6 +800,8 @@
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">slice</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">}</span>
@@ -786,7 +822,9 @@
 <span class="p">}</span>
 <span class="c1">// 切片重新分片，只能向后移，不能向前移
 </span><span class="c1"></span><span class="nx">s1</span> <span class="p">=</span> <span class="nx">slice</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1">// s1=[9,3]
-</span><span class="c1"></span><span class="nx">s2</span> <span class="p">=</span> <span class="nx">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">//</span> <span class="nx">s2</span><span class="p">=[</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="nx">s2</span> <span class="p">=</span> <span class="nx">s1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1">// s2=[9,3,5,1]
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="map-引用类型"><strong>Map(引用类型)</strong></h3>
@@ -798,10 +836,14 @@
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">a</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
-<span class="o">//</span> <span class="nx">在使用map前一定要先make</span><span class="err">，</span><span class="nx">这里和数组不同</span><span class="err">。</span><span class="nx">定义map的时候没有分配内存</span></code></pre></td></tr></table>
+<span class="c1">// 在使用map前一定要先make，这里和数组不同。定义map的时候没有分配内存
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -822,6 +864,8 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">map_a</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
@@ -836,7 +880,9 @@
 <span class="nx">studentMap</span><span class="p">[</span><span class="s">&#34;st1&#34;</span><span class="p">][</span><span class="s">&#34;sex&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;woman&#34;</span>
 <span class="nx">studentMap</span><span class="p">[</span><span class="s">&#34;st1&#34;</span><span class="p">][</span><span class="s">&#34;address&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;北京&#34;</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">studentMap</span><span class="p">)</span> <span class="c1">// map[st1:map[sex:woman address:北京 name:tom]]
-</span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">studentMap</span><span class="p">[</span><span class="s">&#34;st1&#34;</span><span class="p">][</span><span class="s">&#34;address&#34;</span><span class="p">])</span> <span class="o">//</span> <span class="nx">北京</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">studentMap</span><span class="p">[</span><span class="s">&#34;st1&#34;</span><span class="p">][</span><span class="s">&#34;address&#34;</span><span class="p">])</span> <span class="c1">// 北京
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -863,6 +909,8 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 判断key是否存在
@@ -878,7 +926,9 @@
 </span><span class="s">    fmt.Printf(&#34;</span><span class="nx">find</span> <span class="o">%</span><span class="nx">v</span><span class="s">&#34;,val)
 </span><span class="s">}else{
 </span><span class="s">    fmt.Print(&#34;</span><span class="nx">not</span> <span class="nx">find</span><span class="err">&#34;</span><span class="p">)</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -907,6 +957,8 @@
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">monsters</span> <span class="p">[]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
@@ -929,7 +981,9 @@
 <span class="p">}</span>
 
 <span class="nx">monsters</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">monsters</span><span class="p">,</span> <span class="nx">newMonster</span><span class="p">)</span>
-<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">monsters</span><span class="p">)</span></code></pre></td></tr></table>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">monsters</span><span class="p">)</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -956,6 +1010,8 @@
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 对map间接排序
@@ -976,7 +1032,9 @@
 <span class="k">for</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">map_1</span> <span class="p">{</span>
     <span class="nx">map_2</span><span class="p">[</span><span class="nx">v</span><span class="p">]</span> <span class="p">=</span> <span class="nx">k</span>
 <span class="p">}</span>
-<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">map_2</span><span class="p">)</span></code></pre></td></tr></table>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">map_2</span><span class="p">)</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1001,6 +1059,8 @@
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Stu</span> <span class="kd">struct</span><span class="p">{</span>
@@ -1019,7 +1079,9 @@
     <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;student&#39;s num=%v\n&#34;</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;student&#39;s name=%v\n&#34;</span><span class="p">,</span> <span class="nx">v</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">()</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1049,6 +1111,8 @@
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//当 map 因扩张重新哈希时，各键值项存储位置都会发改变。
@@ -1072,7 +1136,9 @@
 <span class="nx">m2</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="o">*</span><span class="nx">user</span><span class="p">{</span>
     <span class="mi">1</span><span class="p">:</span><span class="o">&amp;</span><span class="nx">user</span><span class="p">{</span><span class="s">&#34;user1&#34;</span><span class="p">},</span>
 <span class="p">}</span>
-<span class="nx">m2</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">name</span> <span class="p">=</span> <span class="s">&#34;jack&#34;</span> <span class="o">//</span> <span class="nx">返回的是指针复制品</span><span class="err">。</span><span class="nx">透过指针修改原对象是允许的</span></code></pre></td></tr></table>
+<span class="nx">m2</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">name</span> <span class="p">=</span> <span class="s">&#34;jack&#34;</span> <span class="c1">// 返回的是指针复制品。透过指针修改原对象是允许的
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="struct-值类型"><strong>Struct(值类型)</strong></h3>
@@ -1086,15 +1152,17 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">person</span> <span class="kd">struct</span><span class="p">{</span>
@@ -1105,7 +1173,9 @@
     <span class="nx">slice</span> <span class="p">[]</span><span class="kt">int</span>
     <span class="kd">map</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
 <span class="p">}</span>
-<span class="o">//</span> <span class="nx">如果结构体的字段类型是</span><span class="err">：</span> <span class="nx">指针</span><span class="err">，</span><span class="nx">slice</span><span class="err">，</span><span class="nx">map的零值都是nil</span><span class="err">，</span><span class="nx">没有分配空间</span><span class="err">，</span><span class="nx">实用的时候要先make</span></code></pre></td></tr></table>
+<span class="c1">// 如果结构体的字段类型是： 指针，slice，map的零值都是nil，没有分配空间，实用的时候要先make
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1129,6 +1199,8 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 匿名结构体
@@ -1146,22 +1218,9 @@
     <span class="nx">Age</span> <span class="kt">int</span>
 <span class="p">}</span>
 <span class="nx">a</span> <span class="o">:=</span> <span class="nx">teacher</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="s">&#34;joe&#34;</span><span class="p">,</span><span class="nx">Age</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="nx">human</span><span class="p">:</span><span class="nx">human</span><span class="p">{</span><span class="nx">Sex</span><span class="p">:</span><span class="mi">0</span><span class="p">}}</span>
-<span class="nx">a</span> <span class="o">:=</span> <span class="nx">student</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="s">&#34;joe&#34;</span><span class="p">,</span><span class="nx">Age</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="nx">human</span><span class="p">:</span><span class="nx">human</span><span class="p">{</span><span class="nx">Sex</span><span class="p">:</span><span class="mi">1</span><span class="p">}}</span></code></pre></td></tr></table>
-</div>
-</div>
-<ul>
-<li>标签</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kd">type</span> <span class="nx">Human</span> <span class="kd">struct</span> <span class="p">{</span>
-      <span class="nx">Sex</span> <span class="kt">int</span> <span class="err">&#39;</span><span class="nx">json</span><span class="p">:</span><span class="s">&#34;sex&#34;</span><span class="err">&#39;</span>
-  <span class="p">}</span></code></pre></td></tr></table>
+<span class="nx">a</span> <span class="o">:=</span> <span class="nx">student</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="s">&#34;joe&#34;</span><span class="p">,</span><span class="nx">Age</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="nx">human</span><span class="p">:</span><span class="nx">human</span><span class="p">{</span><span class="nx">Sex</span><span class="p">:</span><span class="mi">1</span><span class="p">}}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1169,26 +1228,34 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kd">type</span> <span class="nx">Student</span> <span class="kd">struct</span><span class="p">{</span>
-      <span class="nx">Name</span> <span class="kt">string</span>
-      <span class="nx">Age</span> <span class="kt">int</span>
-  <span class="p">}</span>
-  <span class="kd">var</span> <span class="nx">st1</span> <span class="p">=</span> <span class="nx">Stu</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="s">&#34;leighj&#34;</span><span class="p">,</span><span class="nx">Age</span><span class="p">:</span><span class="mi">30</span><span class="p">}</span>
-  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">st1</span><span class="p">)</span>
-  <span class="c1">// 返回结构体的指针类型
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">st2</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">Stu</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="err">&#34;</span><span class="nx">leighj</span><span class="p">,</span><span class="nx">Age</span><span class="p">:</span><span class="mi">30</span><span class="p">}</span>
-  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="o">*</span><span class="nx">st2</span><span class="p">)</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Student</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">Name</span> <span class="kt">string</span>
+    <span class="nx">Age</span>  <span class="kt">int</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">st1</span> <span class="p">=</span> <span class="nx">Student</span><span class="p">{</span><span class="s">&#34;leighj&#34;</span><span class="p">,</span> <span class="mi">30</span><span class="p">}</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">st1</span><span class="p">)</span> <span class="c1">// {leighj 30}
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">st2</span> <span class="p">=</span> <span class="nx">Student</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;leighj&#34;</span><span class="p">,</span> <span class="nx">Age</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">st2</span><span class="p">)</span> <span class="c1">// {leighj 30}
+</span><span class="c1">// 返回结构体的指针类型
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">st3</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">Student</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span> <span class="s">&#34;leighj&#34;</span><span class="p">,</span> <span class="nx">Age</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">st3</span><span class="p">)</span> <span class="c1">// {leighj 30}
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1217,25 +1284,25 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kn">package</span> <span class="nx">model</span>
-  <span class="kd">type</span> <span class="nx">student</span> <span class="kd">struct</span><span class="p">{</span>
-      <span class="nx">Name</span> <span class="kt">string</span>
-      <span class="nx">Score</span> <span class="kt">float64</span>
-  <span class="p">}</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">model</span>
+<span class="kd">type</span> <span class="nx">student</span> <span class="kd">struct</span><span class="p">{</span>
+    <span class="nx">Name</span> <span class="kt">string</span>
+    <span class="nx">Score</span> <span class="kt">float64</span>
+<span class="p">}</span>
 
-  <span class="kd">func</span> <span class="nf">NewStudent</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">,</span><span class="nx">score</span> <span class="kt">float64</span><span class="p">)</span> <span class="o">*</span><span class="nx">student</span><span class="p">{</span>
-      <span class="k">return</span> <span class="o">&amp;</span><span class="nx">student</span><span class="p">{</span>
-          <span class="nx">Name</span><span class="p">:</span><span class="nx">name</span><span class="p">,</span>
-          <span class="nx">Score</span><span class="p">:</span><span class="nx">score</span><span class="p">,</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
+<span class="kd">func</span> <span class="nf">NewStudent</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">,</span><span class="nx">score</span> <span class="kt">float64</span><span class="p">)</span> <span class="o">*</span><span class="nx">student</span><span class="p">{</span>
+    <span class="k">return</span> <span class="o">&amp;</span><span class="nx">student</span><span class="p">{</span>
+        <span class="nx">Name</span><span class="p">:</span><span class="nx">name</span><span class="p">,</span>
+        <span class="nx">Score</span><span class="p">:</span><span class="nx">score</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-  <span class="kn">package</span> <span class="nx">main</span>
+<span class="kn">package</span> <span class="nx">main</span>
 
-  <span class="kn">import</span><span class="p">(</span><span class="s">&#34;model&#34;</span><span class="p">)</span>
+<span class="kn">import</span><span class="p">(</span><span class="s">&#34;model&#34;</span><span class="p">)</span>
 
-  <span class="nx">vat</span> <span class="nx">st</span> <span class="p">=</span> <span class="nx">model</span><span class="p">.</span><span class="nf">NewStudent</span><span class="p">(</span><span class="s">&#34;leighj&#34;</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
-  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="nx">stu</span><span class="p">)</span></code></pre></td></tr></table>
+<span class="nx">vat</span> <span class="nx">st</span> <span class="p">=</span> <span class="nx">model</span><span class="p">.</span><span class="nf">NewStudent</span><span class="p">(</span><span class="s">&#34;leighj&#34;</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1263,9 +1330,11 @@
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">a</span><span class="p">.(</span><span class="kd">type</span><span class="p">)</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">val</span><span class="p">.(</span><span class="kd">type</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="nf">classifier</span><span class="p">(</span><span class="nx">items</span> <span class="o">...</span><span class="kd">interface</span><span class="p">{}){</span>
     <span class="k">for</span> <span class="nx">i</span><span class="p">,</span><span class="nx">x</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">items</span><span class="p">{</span>
@@ -1284,7 +1353,9 @@
             <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;param #%d’s type is unknown\n&#34;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1295,11 +1366,15 @@
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="kd">var</span> <span class="nx">null</span> <span class="kd">struct</span><span class="p">{}</span>
-  <span class="nx">set</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">struct</span><span class="p">{})</span>
-  <span class="nx">set</span><span class="p">[</span><span class="s">&#34;a&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">null</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">null</span> <span class="kd">struct</span><span class="p">{}</span>
+<span class="nx">set</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">struct</span><span class="p">{})</span>
+<span class="nx">set</span><span class="p">[</span><span class="s">&#34;a&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">null</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="字符串"><strong>字符串</strong></h3>
@@ -1321,18 +1396,22 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">    <span class="nx">s</span> <span class="o">:=</span> <span class="s">&#34;abc汉字&#34;</span>
-    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">// byte
-</span><span class="c1"></span>        <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%c,&#34;</span><span class="p">,</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
-    <span class="p">}</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">()</span>
-    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">r</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">s</span> <span class="p">{</span> <span class="c1">// rune
-</span><span class="c1"></span>        <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%c,&#34;</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
-    <span class="p">}</span>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">s</span> <span class="o">:=</span> <span class="s">&#34;abc汉字&#34;</span>
+<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span> <span class="c1">// byte
+</span><span class="c1"></span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%c,&#34;</span><span class="p">,</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+<span class="p">}</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">()</span>
+<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">r</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">s</span> <span class="p">{</span> <span class="c1">// rune
+</span><span class="c1"></span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%c,&#34;</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+<span class="p">}</span>
 
-  <span class="o">//</span> <span class="nx">无论哪种转换都会重现分配内存</span><span class="err">，</span><span class="nx">并复制字节数组</span></code></pre></td></tr></table>
+<span class="c1">// 无论哪种转换都会重现分配内存，并复制字节数组
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1364,10 +1443,11 @@
 
 <li><p>strings.TrimSpace,strings.Trim,strings.TrimLeft,strings.TrimRight</p></li>
 
-<li><p>前缀后缀 strings.HasPrefix,strings.HasSuffix</p>
+<li><p>前缀后缀 strings.HasPrefix,strings.HasSuffix</p></li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1375,20 +1455,18 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">func MakeAddSuffix(prefix string) func(string) string {
-    return func(name string) string {
-        if !strings.HasPrefix(name, prefix) {
-            return prefix + name
-        }
-        return name
-    }
-}</pre></td></tr></table>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">MakeAddSuffix</span><span class="p">(</span><span class="nx">prefix</span> <span class="kt">string</span><span class="p">)</span> <span class="kd">func</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">!</span><span class="nx">strings</span><span class="p">.</span><span class="nf">HasPrefix</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">prefix</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">prefix</span> <span class="o">+</span> <span class="nx">name</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">name</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-
+</div>
 <h3 id="时间"><strong>时间</strong></h3>
 
 <ul>
@@ -1450,6 +1528,8 @@
 </span><span class="lnt">46
 </span><span class="lnt">47
 </span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">locales</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
@@ -1499,7 +1579,9 @@
     <span class="nx">loc</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nf">LoadLocation</span><span class="p">(</span><span class="s">&#34;PRC&#34;</span><span class="p">)</span>
     <span class="nx">t</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nf">ParseInLocation</span><span class="p">(</span><span class="s">&#34;2006-01-02 15:04:05&#34;</span><span class="p">,</span> <span class="s">&#34;2019-08-01 00:00:00&#34;</span><span class="p">,</span> <span class="nx">loc</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nf">Unix</span><span class="p">())</span> <span class="c1">// 1564588800 = 2019-08-01 00:00:00
-</span><span class="c1"></span><span class="p">}</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="命令行参数"><strong>命令行参数</strong></h3>
@@ -1518,6 +1600,8 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 一个 string 的切片
@@ -1532,61 +1616,78 @@
 <span class="nx">flag</span><span class="p">.</span><span class="nf">StringVar</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">user</span><span class="p">,</span><span class="s">&#34;u&#34;</span><span class="p">,</span><span class="s">&#34;&#34;</span><span class="p">,</span><span class="s">&#34;用户名默认为空&#34;</span><span class="p">)</span>
 <span class="nx">flag</span><span class="p">.</span><span class="nf">IntVar</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">port</span><span class="p">,</span><span class="s">&#34;p&#34;</span><span class="p">,</span><span class="mi">3306</span><span class="p">,</span><span class="s">&#34;端口默认3306&#34;</span><span class="p">)</span>
 <span class="c1">//important!
-</span><span class="c1"></span><span class="nx">flag</span><span class="p">.</span><span class="nf">Parse</span><span class="p">()</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="nx">flag</span><span class="p">.</span><span class="nf">Parse</span><span class="p">()</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="文件处理"><strong>文件处理</strong></h3>
 
 <ul>
-<li><p>读文件</p>
+<li>读文件</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span></pre></td>
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">os.Open()
-file.Close()
-bufio.NewReader()
-reader.ReadString()
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">os</span><span class="p">.</span><span class="nf">Open</span><span class="p">()</span>
+<span class="nx">file</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+<span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">()</span>
+<span class="nx">reader</span><span class="p">.</span><span class="nf">ReadString</span><span class="p">()</span>
 
-// 使用ioutil一次将整个文件读入到内存中
-ioutil.ReadFile</pre></td></tr></table>
+<span class="c1">// 使用ioutil一次将整个文件读入到内存中
+</span><span class="c1"></span><span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadFile</span>
+
+ </code></pre></td></tr></table>
 </div>
-</div></li>
-
-<li><p>写文件</p>
+</div>
+<ul>
+<li>写文件</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span></pre></td>
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">func OpenFile(name string,flag int, perm FileMode)(file *file,err error)
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">OpenFile</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">,</span><span class="nx">flag</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">perm</span> <span class="nx">FileMode</span><span class="p">)(</span><span class="nx">file</span> <span class="o">*</span><span class="nx">file</span><span class="p">,</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
 
-ioutil.WriteFile(filePath,data,perm FileMode)</pre></td></tr></table>
+<span class="nx">ioutil</span><span class="p">.</span><span class="nf">WriteFile</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span><span class="nx">data</span><span class="p">,</span><span class="nx">perm</span> <span class="nx">FileMode</span><span class="p">)</span>
+
+ </code></pre></td></tr></table>
 </div>
-</div></li>
-
-<li><p>判断文件是否存在</p>
+</div>
+<ul>
+<li>判断文件是否存在</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
-</span></pre></td>
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">os.Stat()
-os.IsNotExist()</pre></td></tr></table>
-</div>
-</div></li>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">os</span><span class="p">.</span><span class="nf">Stat</span><span class="p">()</span>
+<span class="nx">os</span><span class="p">.</span><span class="nf">IsNotExist</span><span class="p">()</span>
 
-<li><p>io.Copy(writer, reader)</p></li>
+ </code></pre></td></tr></table>
+</div>
+</div>
+<ul>
+<li>io.Copy(writer, reader)</li>
 </ul>
 
 <h2 id="函数">函数</h2>
@@ -1638,6 +1739,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">36
 </span><span class="lnt">37
 </span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 一切皆类型
@@ -1663,9 +1766,9 @@ os.IsNotExist()</pre></td></tr></table>
 
 <span class="c1">// 闭包函数保存并积累其中的变量的值，不管外部函数退出与否，它都能够继续操作外部函数中的局部变量。
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">closure</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kd">func</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span>
-  <span class="p">}</span>
+    <span class="k">return</span> <span class="kd">func</span><span class="p">(</span><span class="nx">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">g</span> <span class="kt">int</span>
@@ -1677,7 +1780,9 @@ os.IsNotExist()</pre></td></tr></table>
     <span class="nx">g</span> <span class="p">=</span> <span class="nx">s</span>
 <span class="p">}(</span><span class="mi">1000</span><span class="p">)</span>
 
-<span class="nb">println</span><span class="p">(</span><span class="nx">g</span><span class="p">)</span> <span class="o">//</span> <span class="mi">0</span></code></pre></td></tr></table>
+<span class="nb">println</span><span class="p">(</span><span class="nx">g</span><span class="p">)</span> <span class="c1">// 0
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="defer"><strong>defer</strong></h3>
@@ -1689,14 +1794,16 @@ os.IsNotExist()</pre></td></tr></table>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
@@ -1706,7 +1813,9 @@ os.IsNotExist()</pre></td></tr></table>
 <span class="kd">func</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">conn</span> <span class="p">=</span> <span class="nf">openDatabase</span><span class="p">()</span>
     <span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1740,15 +1849,17 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">main</span><span class="p">(){</span>
-  <span class="nf">A</span><span class="p">()</span>
-  <span class="nf">B</span><span class="p">()</span>
-  <span class="nf">C</span><span class="p">()</span>
+    <span class="nf">A</span><span class="p">()</span>
+    <span class="nf">B</span><span class="p">()</span>
+    <span class="nf">C</span><span class="p">()</span>
 <span class="p">}</span>
 <span class="kd">func</span> <span class="nf">A</span><span class="p">(){</span>
-  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;func A&#34;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;func A&#34;</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="kd">func</span> <span class="nf">B</span><span class="p">(){</span>
 <span class="k">defer</span> <span class="kd">func</span><span class="p">(){</span>
@@ -1756,16 +1867,18 @@ os.IsNotExist()</pre></td></tr></table>
           <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;recover in B&#34;</span><span class="p">)</span>
       <span class="p">}</span>
 <span class="p">}</span>
-  <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;Panic in B&#34;</span><span class="p">)</span>
+    <span class="nb">panic</span><span class="p">(</span><span class="s">&#34;Panic in B&#34;</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="kd">func</span> <span class="nf">C</span><span class="p">(){</span>
-  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;func C&#34;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;func C&#34;</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="nx">输出</span><span class="err">：</span>
 <span class="kd">func</span> <span class="nx">A</span>
 <span class="nx">recover</span> <span class="nx">in</span> <span class="nx">B</span>
-<span class="kd">func</span> <span class="nx">C</span></code></pre></td></tr></table>
+<span class="kd">func</span> <span class="nx">C</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1788,6 +1901,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">where</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(){</span>
@@ -1804,7 +1919,9 @@ os.IsNotExist()</pre></td></tr></table>
 
 <span class="kd">func</span> <span class="nf">func1</span><span class="p">(){</span>
     <span class="nf">where</span><span class="p">()</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="oop">OOP</h2>
@@ -1816,6 +1933,7 @@ os.IsNotExist()</pre></td></tr></table>
 
 <ul>
 <li>Method和结构体的结合</li>
+</ul></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1836,6 +1954,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">A</span> <span class="kd">struct</span><span class="p">{</span>
@@ -1854,7 +1974,9 @@ os.IsNotExist()</pre></td></tr></table>
 <span class="kd">func</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span><span class="nx">A</span><span class="p">)</span> <span class="nf">Print</span><span class="p">(){</span>
   <span class="nx">a</span><span class="p">.</span><span class="nx">Name</span> <span class="p">=</span> <span class="s">&#34;AA&#34;</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;A&#34;</span><span class="p">)</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -1873,6 +1995,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">TZ</span> <span class="kt">int</span>
@@ -1885,18 +2009,11 @@ os.IsNotExist()</pre></td></tr></table>
 <span class="nx">method_a</span><span class="p">.</span><span class="nf">Print</span><span class="p">()</span> <span class="c1">// Method Value
 </span><span class="c1"></span><span class="p">(</span><span class="o">*</span><span class="nx">TZ</span><span class="p">).</span><span class="nf">Print</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">method_a</span><span class="p">)</span> <span class="c1">// Method Expression
 </span><span class="c1"></span>
-<span class="o">//</span> <span class="nx">method</span> <span class="nx">value</span> <span class="nx">会复制</span> <span class="nx">receiver</span><span class="err">。</span></code></pre></td></tr></table>
+<span class="c1">// method value 会复制 receiver。
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
-<ul>
-<li><p>方法访问权限</p></li>
-
-<li><p>首字母大写是public，小写是private</p></li>
-
-<li><p>方法可以调用结构中的非公开字段</p></li>
-</ul></li>
-</ul>
-
 <h3 id="接口"><strong>接口</strong></h3>
 
 <ul>
@@ -1970,6 +2087,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">54
 </span><span class="lnt">55
 </span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">USB</span> <span class="kd">interface</span><span class="p">{</span>
@@ -2027,7 +2146,9 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="c1"></span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">i</span><span class="p">.(</span><span class="nx">User</span><span class="p">))</span> <span class="c1">// {1,tom}
 </span><span class="c1"></span>
 
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="类似封装-继承-多态的特性"><strong>类似封装，继承，多态的特性</strong></h3>
@@ -2058,6 +2179,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Student</span> <span class="kd">struct</span> <span class="p">{</span>
@@ -2078,7 +2201,9 @@ os.IsNotExist()</pre></td></tr></table>
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">stu</span> <span class="o">*</span><span class="nx">Student</span><span class="p">)</span> <span class="nf">SetScore</span><span class="p">(</span><span class="nx">score</span> <span class="kt">float64</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">stu</span><span class="p">.</span><span class="nx">score</span> <span class="p">=</span> <span class="nx">score</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -2099,6 +2224,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Human</span> <span class="kd">struct</span> <span class="p">{</span>
@@ -2113,7 +2240,9 @@ os.IsNotExist()</pre></td></tr></table>
     <span class="nx">Human</span>
     <span class="nx">Name</span> <span class="kt">string</span>
     <span class="nx">Age</span> <span class="kt">int</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -2152,6 +2281,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">USB</span> <span class="kd">interface</span><span class="p">{</span>
@@ -2176,7 +2307,9 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="c1"></span>    <span class="nx">usbArr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Phone</span><span class="p">{}</span>
     <span class="nx">usbArr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Phone</span><span class="p">{}</span>
     <span class="nx">usbArr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Camera</span><span class="p">{}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="协程-管道-select">协程，管道，Select</h2>
@@ -2220,20 +2353,24 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go">  <span class="c1">//如 concurrent map writes!
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//如 concurrent map writes!
 </span><span class="c1"></span>
-  <span class="nx">解决方案</span><span class="err">：</span>
-  <span class="mi">1</span> <span class="nx">全局变量的互斥锁</span>
-  <span class="kd">var</span> <span class="p">(</span>
+<span class="nx">解决方案</span><span class="err">：</span>
+<span class="mi">1</span> <span class="nx">全局变量的互斥锁</span>
+<span class="kd">var</span> <span class="p">(</span>
     <span class="nx">lock</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span>
-  <span class="p">)</span>
-  <span class="nx">lock</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
-  <span class="o">...</span>
-  <span class="nx">lock</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="nx">lock</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="nx">lock</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
 
-  <span class="mi">2</span> <span class="nx">使用管道</span> <span class="nx">channel</span> <span class="nx">来解决</span></code></pre></td></tr></table>
+<span class="mi">2</span> <span class="nx">使用管道</span> <span class="nx">channel</span> <span class="nx">来解决</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -2260,6 +2397,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">sum</span><span class="p">(</span><span class="nx">id</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
@@ -2280,7 +2419,9 @@ os.IsNotExist()</pre></td></tr></table>
         <span class="p">}(</span><span class="nx">i</span><span class="p">)</span>
     <span class="p">}</span>
     <span class="nx">wg</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2299,6 +2440,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//线程安全的方式创建一些东西的最好选择是 sync.Once
@@ -2315,7 +2458,9 @@ os.IsNotExist()</pre></td></tr></table>
 <span class="p">}</span>
 <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
     <span class="o">&lt;-</span><span class="nx">done</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="管道channel-引用类型"><strong>管道channel(引用类型)</strong></h3>
@@ -2358,6 +2503,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">变量名</span> <span class="kd">chan</span> <span class="nx">数据类型</span>
@@ -2382,7 +2529,9 @@ os.IsNotExist()</pre></td></tr></table>
 <span class="p">}()</span>
 <span class="k">for</span> <span class="nx">v</span> <span class="o">:=</span><span class="k">range</span> <span class="nx">c</span> <span class="p">{</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -2415,6 +2564,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//有缓存和无缓存的差别
@@ -2439,7 +2590,9 @@ os.IsNotExist()</pre></td></tr></table>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
         <span class="k">break</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -2449,10 +2602,14 @@ os.IsNotExist()</pre></td></tr></table>
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="kd">chan</span> <span class="kd">chan</span><span class="o">&lt;-</span> <span class="kt">int</span> <span class="c1">// 只能写
-</span><span class="c1"></span><span class="kd">var</span> <span class="kd">chan</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="kt">int</span> <span class="o">//</span> <span class="nx">只能读</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="kd">var</span> <span class="kd">chan</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="kt">int</span> <span class="c1">// 只能读
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -2513,6 +2670,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">39
 </span><span class="lnt">40
 </span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">c1</span><span class="p">,</span><span class="nx">c2</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">),</span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">)</span>
@@ -2555,7 +2714,9 @@ os.IsNotExist()</pre></td></tr></table>
     <span class="nx">w</span> <span class="o">&lt;-</span> <span class="kc">true</span>
 <span class="p">}()</span>
 <span class="c1">// c &lt;- 1 // 注释掉会引发超时
-</span><span class="c1"></span><span class="o">&lt;-</span><span class="nx">w</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="o">&lt;-</span><span class="nx">w</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -2581,6 +2742,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
@@ -2598,7 +2761,9 @@ os.IsNotExist()</pre></td></tr></table>
         <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;main() ok=&#34;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
         <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="定时器和打点器"><strong>定时器和打点器</strong></h3>
@@ -2641,6 +2806,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">29
 </span><span class="lnt">30
 </span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">timer2</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nf">NewTimer</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
@@ -2673,7 +2840,9 @@ os.IsNotExist()</pre></td></tr></table>
 <span class="c1">// 输出:
 </span><span class="c1">// start 2018-06-04 13:07:51.780367114 +0800 CST m=+0.000324036
 </span><span class="c1">// sleep 2018-06-04 13:07:52.783389811 +0800 CST m=+1.003316644
-</span><span class="c1"></span><span class="o">//</span> <span class="nx">get</span> <span class="nx">timer</span> <span class="mi">2018</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mo">04</span> <span class="mi">13</span><span class="p">:</span><span class="mo">07</span><span class="p">:</span><span class="mf">55.784534298</span> <span class="o">+</span><span class="mi">0800</span> <span class="nx">CST</span> <span class="nx">m</span><span class="p">=</span><span class="o">+</span><span class="mf">4.004371103</span></code></pre></td></tr></table>
+</span><span class="c1">// get timer 2018-06-04 13:07:55.784534298 +0800 CST m=+4.004371103
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -2686,13 +2855,17 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Ticker</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">C</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="nx">Time</span> <span class="c1">// 周期性传递时间信息的通道
 </span><span class="c1"></span>    <span class="c1">// 内含隐藏或非导出字段
 </span><span class="c1"></span><span class="p">}</span>
-  <span class="o">//</span> <span class="nx">Ticker</span> <span class="nx">保管一个通道</span><span class="err">，</span><span class="nx">并每隔一段时间向其传递</span><span class="err">”</span><span class="nx">tick</span><span class="err">”。</span></code></pre></td></tr></table>
+  <span class="c1">// Ticker 保管一个通道，并每隔一段时间向其传递”tick”。
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2726,6 +2899,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">28
 </span><span class="lnt">29
 </span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">ticker</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nf">NewTicker</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span> <span class="o">*</span> <span class="mi">500</span><span class="p">)</span>
@@ -2757,7 +2932,9 @@ os.IsNotExist()</pre></td></tr></table>
   <span class="p">}</span>
 <span class="p">}()</span>
 <span class="nx">wait</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
-<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;stoped&#34;</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">())</span></code></pre></td></tr></table>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;stoped&#34;</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">())</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="其他">其他</h2>
@@ -2813,6 +2990,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">conn</span><span class="p">,</span><span class="nx">err</span> <span class="o">:=</span> <span class="nx">redis</span><span class="p">.</span><span class="nf">Dail</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span><span class="s">&#34;127.0.0.1:6379&#34;</span><span class="p">)</span>
@@ -2838,7 +3017,9 @@ os.IsNotExist()</pre></td></tr></table>
 <span class="c1">//list
 </span><span class="c1"></span><span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="s">&#34;lpush&#34;</span><span class="p">,</span> <span class="s">&#34;heroList&#34;</span><span class="p">,</span> <span class="s">&#34;no1:宋江&#34;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s">&#34;no2:卢俊义&#34;</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
 <span class="c1">// 因为返回 r 是 interface{} 需要转换
-</span><span class="c1"></span><span class="nx">r</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">redis</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="nx">conn</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="s">&#34;rpop&#34;</span><span class="p">,</span> <span class="s">&#34;heroList&#34;</span><span class="p">))</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="nx">r</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">redis</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="nx">conn</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="s">&#34;rpop&#34;</span><span class="p">,</span> <span class="s">&#34;heroList&#34;</span><span class="p">))</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -2863,6 +3044,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">pool</span> <span class="o">*</span><span class="nx">redis</span><span class="p">.</span><span class="nx">Pool</span>
@@ -2881,7 +3064,9 @@ os.IsNotExist()</pre></td></tr></table>
     <span class="nx">conn</span> <span class="o">:=</span> <span class="nx">poll</span><span class="p">.</span><span class="nf">Get</span><span class="p">()</span>
     <span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
     <span class="o">...</span>
-<span class="p">}</span></code></pre></td></tr></table>
+<span class="p">}</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h3 id="正则"><strong>正则</strong></h3>
@@ -2893,12 +3078,16 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">re</span> <span class="o">:=</span> <span class="nx">regexp</span><span class="p">.</span><span class="nf">MustCompile</span><span class="p">(</span><span class="s">&#34;(gopher){2}&#34;</span><span class="p">)</span>
 <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">re</span><span class="p">.</span><span class="nf">MatchString</span><span class="p">(</span><span class="s">&#34;gopher&#34;</span><span class="p">))</span> <span class="c1">//false
 </span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">re</span><span class="p">.</span><span class="nf">MatchString</span><span class="p">(</span><span class="s">&#34;gophergopher&#34;</span><span class="p">))</span> <span class="c1">//true
-</span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">re</span><span class="p">.</span><span class="nf">MatchString</span><span class="p">(</span><span class="s">&#34;gophergophergopher&#34;</span><span class="p">))</span> <span class="o">//</span><span class="kc">true</span></code></pre></td></tr></table>
+</span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">re</span><span class="p">.</span><span class="nf">MatchString</span><span class="p">(</span><span class="s">&#34;gophergophergopher&#34;</span><span class="p">))</span> <span class="c1">//true
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="test用例">Test用例</h2>
@@ -2927,11 +3116,15 @@ os.IsNotExist()</pre></td></tr></table>
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">bench</span><span class="p">=.</span> <span class="p">.</span>
 <span class="k">go</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">bench</span><span class="p">=.</span> <span class="o">-</span><span class="nx">run</span><span class="p">=</span><span class="nx">none</span> <span class="p">.</span>
-<span class="k">go</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">bench</span><span class="p">=.</span> <span class="o">-</span><span class="nx">run</span><span class="p">=</span><span class="nx">none</span> <span class="o">-</span><span class="nx">benchmem</span> <span class="p">.</span></code></pre></td></tr></table>
+<span class="k">go</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">bench</span><span class="p">=.</span> <span class="o">-</span><span class="nx">run</span><span class="p">=</span><span class="nx">none</span> <span class="o">-</span><span class="nx">benchmem</span> <span class="p">.</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="special-tips"><strong>Special Tips</strong></h2>
@@ -3054,6 +3247,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">115
 </span><span class="lnt">116
 </span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">f1</span><span class="p">()</span> <span class="p">{</span>
@@ -3172,7 +3367,9 @@ os.IsNotExist()</pre></td></tr></table>
 
 
 <span class="c1">// type只能使用在interface
-</span><span class="c1"></span><span class="o">//</span><span class="nx">panic</span><span class="o">-</span><span class="nx">recover</span> <span class="nx">对重复解锁互斥锁引发的panic却是无用的</span></code></pre></td></tr></table>
+</span><span class="c1">//panic-recover 对重复解锁互斥锁引发的panic却是无用的
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <p><strong>Tips</strong></p>
@@ -3188,6 +3385,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">builtin函数</span> <span class="err">：</span>
@@ -3199,7 +3398,9 @@ os.IsNotExist()</pre></td></tr></table>
 <span class="kd">func</span> <span class="nb">make</span><span class="p">(</span><span class="nx">t</span> <span class="nx">Type</span><span class="p">,</span> <span class="nx">size</span> <span class="o">...</span><span class="nx">IntegerType</span><span class="p">)</span> <span class="nx">Type</span>
 
 <span class="nx">new</span> <span class="nx">计算类型大小</span><span class="err">，</span><span class="nx">分配零值内存</span><span class="err">，</span><span class="nx">返回指针</span><span class="err">。</span><span class="nx">适用于数组和结构体</span>
-<span class="nx">make</span> <span class="nx">会被编译器翻译成具体的创建函数</span><span class="err">，</span><span class="nx">由其分配内存和初始化成员结构</span><span class="err">，</span><span class="nx">返回对象而非指针</span><span class="err">。</span><span class="nx">适用于切片</span><span class="err">、</span><span class="kd">map</span> <span class="nx">和</span> <span class="nx">channel</span></code></pre></td></tr></table>
+<span class="nx">make</span> <span class="nx">会被编译器翻译成具体的创建函数</span><span class="err">，</span><span class="nx">由其分配内存和初始化成员结构</span><span class="err">，</span><span class="nx">返回对象而非指针</span><span class="err">。</span><span class="nx">适用于切片</span><span class="err">、</span><span class="kd">map</span> <span class="nx">和</span> <span class="nx">channel</span>
+
+ </code></pre></td></tr></table>
 </div>
 </div>
 <h2 id="go为数不多的陷阱"><strong>Go为数不多的陷阱</strong></h2>
@@ -3215,6 +3416,8 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Go 语言为数不多的陷阱之Slice
@@ -3226,7 +3429,9 @@ os.IsNotExist()</pre></td></tr></table>
 <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">slice</span><span class="p">)</span>                  <span class="c1">// [2,6,7,8]
 </span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">slice</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="nx">slice</span><span class="p">))</span> <span class="c1">// 4,4
 </span><span class="c1"></span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>                    <span class="c1">// [1,2,6,7,8]
-</span><span class="c1"></span><span class="o">//</span> <span class="nx">信条</span><span class="p">:</span> <span class="nx">不对函数slice类型的参数append</span></code></pre></td></tr></table>
+</span><span class="c1">// 信条: 不对函数slice类型的参数append
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
 <ul>
@@ -3278,9 +3483,15 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="lnt">42
 </span><span class="lnt">43
 </span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Go 语言为数不多的陷阱之 闭包
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Go 语言为数不多的陷阱之闭包
+</span><span class="c1">// 闭包只是带有父函数的上下文（context）的函数
+</span><span class="c1">// 闭包对父函数的context只是引用而不复制
 </span><span class="c1">// Go 的函数返回值是通过堆栈返回的。return语句不是原子操作。
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">f6</span><span class="p">()</span> <span class="p">(</span><span class="nx">r</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">t</span> <span class="o">:=</span> <span class="mi">5</span>
@@ -3323,7 +3534,9 @@ os.IsNotExist()</pre></td></tr></table>
 </span><span class="c1"></span>    <span class="c1">// defer: 10 120
 </span><span class="c1"></span>    <span class="k">return</span>
 <span class="p">}</span>
-<span class="o">//</span> <span class="nx">总结</span><span class="p">:</span> <span class="mi">1</span><span class="nx">谨记defer和return执行的顺序</span> <span class="mi">2</span><span class="nx">注意返回值是否为闭包引用</span></code></pre></td></tr></table>
+<span class="c1">// 总结: 1谨记defer和return执行的顺序 2注意返回值是否为闭包引用
+</span><span class="c1"></span>
+ </code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -3336,7 +3549,7 @@ os.IsNotExist()</pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-07-25
+        2019-08-01
         
     </span>
   </p>
@@ -3382,7 +3595,9 @@ os.IsNotExist()</pre></td></tr></table>
 
     <footer id="footer" class="footer">
       <div class="social-links">
+      <a href="mailto:leighj@163.com" class="iconfont icon-email" title="email"></a>
       <a href="https://github.com/leighjpeter" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/p/1005051803322877" class="iconfont icon-weibo" title="weibo"></a>
 
 </div>
 
