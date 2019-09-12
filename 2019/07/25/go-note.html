@@ -53,7 +53,7 @@
 
 <meta itemprop="datePublished" content="2019-07-25T11:11:24&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-01T11:11:24&#43;08:00" />
-<meta itemprop="wordCount" content="8530">
+<meta itemprop="wordCount" content="8744">
 
 
 
@@ -130,11 +130,11 @@
       <h1 class="post-title">Go Note</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-07-25 </span>
+        <span class="post-time"> 2019-07-25 11:11 </span>
         <div class="post-category">
             <a href="/categories/Go/"> Go </a>
             </div>
-          <span class="more-meta"> 约 8530 字 </span>
+          <span class="more-meta"> 约 8744 字 </span>
           <span class="more-meta"> 预计阅读 18 分钟 </span>
         
       </div>
@@ -3108,6 +3108,52 @@
 <li><p>平行测试：如果一个测试情景超过1s就可以参考用平行测试</p></li>
 </ul>
 
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-v</td>
+<td>显示通过的详细测试信息，默认只显示错误信息以及通过的概要</td>
+</tr>
+
+<tr>
+<td>-c</td>
+<td>生成用于运行测试的可执行文件，但不执行它。这个可执行文件会被命名为“pkg.test”，其中的“pkg”即为被测试代码包的导入路径的最后一个元素的名称。</td>
+</tr>
+
+<tr>
+<td>-i</td>
+<td>只是安装测试所依赖的包，不会编译执行</td>
+</tr>
+
+<tr>
+<td>-o</td>
+<td>指定编译生成的可执行文件名</td>
+</tr>
+
+<tr>
+<td>-bench regexp</td>
+<td>执行相应的 benchmarks，例如 -bench=.</td>
+</tr>
+
+<tr>
+<td>-cover</td>
+<td>开启测试覆盖率</td>
+</tr>
+
+<tr>
+<td>-run regexp</td>
+<td>只运行 regexp 匹配的函数，例如 -run=Array 那么就执行包含有 Array 开头的函数</td>
+</tr>
+</tbody>
+</table>
+
 <h3 id="单元测试"><strong>单元测试</strong></h3>
 
 <h3 id="性能测试benchmark"><strong>性能测试Benchmark</strong></h3>
@@ -3118,12 +3164,16 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">bench</span><span class="p">=.</span> <span class="p">.</span>
 <span class="k">go</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">bench</span><span class="p">=.</span> <span class="o">-</span><span class="nx">run</span><span class="p">=</span><span class="nx">none</span> <span class="p">.</span>
 <span class="k">go</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">bench</span><span class="p">=.</span> <span class="o">-</span><span class="nx">run</span><span class="p">=</span><span class="nx">none</span> <span class="o">-</span><span class="nx">benchmem</span> <span class="p">.</span>
 
+<span class="k">go</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">v</span> <span class="o">-</span><span class="nx">bench</span><span class="p">=.</span> <span class="nx">int2str_test</span><span class="p">.</span><span class="k">go</span> <span class="o">-</span><span class="nx">benchmem</span>
+<span class="k">go</span> <span class="nx">test</span> <span class="o">-</span><span class="nx">bench</span><span class="p">=.</span> <span class="o">-</span><span class="nx">cpu</span><span class="p">=</span><span class="mi">1</span> <span class="nx">benchmark</span><span class="o">/</span><span class="nx">goroutine_test</span><span class="p">.</span><span class="k">go</span>
  </code></pre></td></tr></table>
 </div>
 </div>
@@ -3549,14 +3599,28 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-08-01
+        2019-08-01 11:11
         
     </span>
   </p>
   
   
 </div>
-<footer class="post-footer">
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wxpay.jpg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/Go/">Go</a>
           </div>
@@ -3569,26 +3633,29 @@
         
       </nav>
     </footer>
+    <script src="https://utteranc.es/client.js"
+            repo="leighjpeter/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterance.</a></noscript>
   </article>
         </div>
-        <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    (function() {
-      
-      
-      if (window.location.hostname === 'localhost') return;
+        
+  
+  
 
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      var disqus_shortname = 'leighj';
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+  
+    <script src="https://utteranc.es/client.js"
+            repo="leighjpeter/leighjpeter/blog"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  
-  
-
-  
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
 
       </div>
     </main>

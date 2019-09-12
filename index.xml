@@ -6,10 +6,21 @@
     <description>Recent content on Leighj</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 06 Aug 2019 15:45:29 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Sep 2019 09:47:01 +0800</lastBuildDate>
     
 	<atom:link href="https://leighj.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Beego - Endpoint Testing</title>
+      <link>https://leighj.github.io/2019/09/12/beego_endpoint_testing.html</link>
+      <pubDate>Thu, 12 Sep 2019 09:47:01 +0800</pubDate>
+      
+      <guid>https://leighj.github.io/2019/09/12/beego_endpoint_testing.html</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Beego - Endpoint Testing&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>Protocol Buffers</title>

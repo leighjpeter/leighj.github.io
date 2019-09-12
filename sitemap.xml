@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://leighj.github.io/2019/09/12/beego_endpoint_testing.html</loc>
+    <lastmod>2019-09-12T09:47:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://leighj.github.io/2019/08/06/protobuf.html</loc>
     <lastmod>2019-08-06T15:45:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -24,37 +31,37 @@
   
   <url>
     <loc>https://leighj.github.io/categories/</loc>
-    <lastmod>2019-08-06T15:45:29+08:00</lastmod>
+    <lastmod>2019-09-12T09:47:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://leighj.github.io/categories/Go/</loc>
-    <lastmod>2019-08-06T15:45:29+08:00</lastmod>
+    <lastmod>2019-09-12T09:47:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://leighj.github.io/tags/Go/</loc>
-    <lastmod>2019-08-06T15:45:29+08:00</lastmod>
+    <lastmod>2019-09-12T09:47:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://leighj.github.io/</loc>
-    <lastmod>2019-08-06T15:45:29+08:00</lastmod>
+    <lastmod>2019-09-12T09:47:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://leighj.github.io/post/</loc>
-    <lastmod>2019-08-06T15:45:29+08:00</lastmod>
+    <lastmod>2019-09-12T09:47:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://leighj.github.io/tags/</loc>
-    <lastmod>2019-08-06T15:45:29+08:00</lastmod>
+    <lastmod>2019-09-12T09:47:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
