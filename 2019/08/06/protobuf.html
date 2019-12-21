@@ -164,9 +164,7 @@
 
 <h2 id="什么是protocol-buffers">什么是Protocol buffers</h2>
 
-<ul>
-<li>一种灵活，高效，自动化的机制，用于序列化结构化数据 - 类似XML，但更小，更快，更简单。 可以定义数据的结构化结构，然后使用特殊生成的源代码轻松地将结构化数据写入和读取各种数据流，并使用各种语言。 甚至可以更新数据结构，而不会破坏根据“旧”格式编译的已部署程序。</li>
-</ul>
+<p>一种灵活，高效，自动化的机制，用于序列化结构化数据 - 类似XML，但更小，更快，更简单。 可以定义数据的结构化结构，然后使用特殊生成的源代码轻松地将结构化数据写入和读取各种数据流，并使用各种语言。 甚至可以更新数据结构，而不会破坏根据“旧”格式编译的已部署程序。</p>
 
 <h2 id="官方的例子">官方的例子</h2>
 <div class="highlight"><div class="chroma">
@@ -205,6 +203,7 @@
 </span><span class="lnt">32
 </span><span class="lnt">33
 </span><span class="lnt">34
+</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// [START declaration]
@@ -216,31 +215,32 @@
 </span><span class="c1"></span>
 <span class="c1">// [START messages]
 </span><span class="c1"></span><span class="nx">message</span> <span class="nx">Person</span> <span class="p">{</span>
-  <span class="kt">string</span> <span class="nx">name</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-  <span class="kt">int32</span> <span class="nx">id</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// Unique ID number for this person.
-</span><span class="c1"></span>  <span class="kt">string</span> <span class="nx">email</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="nx">name</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int32</span> <span class="nx">id</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// Unique ID number for this person.
+</span><span class="c1"></span>    <span class="kt">string</span> <span class="nx">email</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
 
-  <span class="nx">enum</span> <span class="nx">PhoneType</span> <span class="p">{</span>
-    <span class="nx">MOBILE</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="nx">HOME</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="nx">WORK</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="nx">enum</span> <span class="nx">PhoneType</span> <span class="p">{</span>
+        <span class="nx">MOBILE</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="nx">HOME</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="nx">WORK</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
 
-  <span class="nx">message</span> <span class="nx">PhoneNumber</span> <span class="p">{</span>
-    <span class="kt">string</span> <span class="nx">number</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="nx">PhoneType</span> <span class="kd">type</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="nx">message</span> <span class="nx">PhoneNumber</span> <span class="p">{</span>
+        <span class="kt">string</span> <span class="nx">number</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="nx">PhoneType</span> <span class="kd">type</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
 
-  <span class="nx">repeated</span> <span class="nx">PhoneNumber</span> <span class="nx">phones</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
-<span class="nx">https</span><span class="p">:</span><span class="c1">//developers.google.com/protocol-buffers/docs/downloads
-</span><span class="c1"></span>  <span class="nx">google</span><span class="p">.</span><span class="nx">protobuf</span><span class="p">.</span><span class="nx">Timestamp</span> <span class="nx">last_updated</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="nx">repeated</span> <span class="nx">PhoneNumber</span> <span class="nx">phones</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
+
+    <span class="nx">google</span><span class="p">.</span><span class="nx">protobuf</span><span class="p">.</span><span class="nx">Timestamp</span> <span class="nx">last_updated</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// Our address book file is just one of these.
 </span><span class="c1"></span><span class="nx">message</span> <span class="nx">AddressBook</span> <span class="p">{</span>
   <span class="nx">repeated</span> <span class="nx">Person</span> <span class="nx">people</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="o">//</span> <span class="p">[</span><span class="nx">END</span> <span class="nx">messages</span><span class="p">]</span></code></pre></td></tr></table>
+<span class="c1">// [END messages]
+</span><span class="c1"></span> </code></pre></td></tr></table>
 </div>
 </div>
 <p><strong>每个 message 类型都有一个或者多个带有唯一编号的字段, 每个字段都有对应的名称和值类型</strong></p>
